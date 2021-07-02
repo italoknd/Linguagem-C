@@ -5,21 +5,23 @@
 //Desenvolver um algoritmo que leia a altura de 15 pessoas. Este programa dever� calcular e mostrar:
 //A menor altura do grupo e a maior altura do grupo
 
-int main() {
-	int i=1, y=0;
-	float menorAlt=0, maiorAlt=0, alt;
-	
-	setlocale(LC_ALL,"");
-	
-	do{
-		printf("\n Informe a %d� altura: ",i);
-		scanf("%f",&alt);
-		
+int main()
+{
+	int i = 1, y = 0;
+	float menorAlt = 0, maiorAlt = 0, alt;
+
+	setlocale(LC_ALL, "");
+
+	do
+	{
+		printf("\n Informe a %d� altura: ", i);
+		scanf("%f", &alt);
+
 		/*No "if" a seguir, eu coloco como condi��o se "Y==0" para que as minhas duas variaveis
 		"Maior" e "Menor" recebam o mesmo valor para assim  inicializarmos as compara��es
 	    Ao final incrementa-se 1 a variavel "y" para que essa condi��o nao seja mais atendida
 		e o codigo prossiga normalmente.*/
-		
+
 		/*  Lembrando que a variavel de teste (nesse caso "y") deve inicializar
 		com um valor que bata como o valor da condi��o pelo menos na primeira vez, ou seja:
 		
@@ -43,23 +45,28 @@ int main() {
 			
 		e assim por diante.
 		*/
-		
-		if(y==0){
+
+		if (y == 0)
+		{
 			maiorAlt = alt;
 			menorAlt = alt;
 			y++;
-		}else if(alt > maiorAlt){
+		}
+		else if (alt > maiorAlt)
+		{
 			maiorAlt = alt;
-		}else if(alt<menorAlt){
+		}
+		else if (alt < menorAlt)
+		{
 			menorAlt = alt;
 		}
-		
+
 		i++;
-	}while(i<=15);
-	
+	} while (i <= 15);
+
 	printf("\n A maior altura do grupo eh: %.2f", maiorAlt);
 	printf("\n E a menor altura do grupo eh: %.2f", menorAlt);
-	
+
 	return 0;
 }
 
